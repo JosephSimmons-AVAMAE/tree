@@ -27,10 +27,10 @@ node_modules
 dist
 *.css
 build
-lib
+# lib
 /coverage
 yarn.lock
-es/
+# es/
 !tests/__mocks__/rc-util/lib
 # umi
 .umi

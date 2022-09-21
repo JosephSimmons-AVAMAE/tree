@@ -45,6 +45,9 @@
     "gh-pages": "npm run docs:build && father doc deploy",
     "now-build": "npm run docs:build"
   },
+  "precommit": [
+    "compile"
+  ],
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
