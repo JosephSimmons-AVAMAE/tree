@@ -44,7 +44,7 @@
     "coverage": "father test --coverage",
     "gh-pages": "npm run docs:build && father doc deploy",
     "now-build": "npm run docs:build",
-    "postinstall": "cd node_modules/rc-tree && npm install && npm run build"
+    "postinstall": "cd node_modules/tree && npm install && npm run build"
   },
   "peerDependencies": {
     "react": "*",
