@@ -25,7 +25,7 @@ package-lock.json
 node_modules
 .cache
 dist
-*.css
+# *.css
 build
 # lib
 /coverage
