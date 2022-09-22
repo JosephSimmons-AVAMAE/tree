@@ -641,11 +641,21 @@ var Tree = /*#__PURE__*/function (_React$Component) {
     };
 
     _this.onNodeContextMenu = function (event, node) {
-      var onRightClick = _this.props.onRightClick;
+      var _this$props8 = _this.props,
+          onRightClick = _this$props8.onRightClick,
+          onOptionsIconClick = _this$props8.onOptionsIconClick;
 
       if (onRightClick) {
         event.preventDefault();
         onRightClick({
+          event: event,
+          node: node
+        });
+      }
+
+      if (onOptionsIconClick) {
+        event.preventDefault();
+        onOptionsIconClick({
           event: event,
           node: node
         });
@@ -723,9 +733,9 @@ var Tree = /*#__PURE__*/function (_React$Component) {
       var _this$state10 = _this.state,
           listChanging = _this$state10.listChanging,
           fieldNames = _this$state10.fieldNames;
-      var _this$props8 = _this.props,
-          onExpand = _this$props8.onExpand,
-          loadData = _this$props8.loadData;
+      var _this$props9 = _this.props,
+          onExpand = _this$props9.onExpand,
+          loadData = _this$props9.loadData;
       var expanded = treeNode.expanded;
       var key = treeNode[fieldNames.key]; // Do nothing when motion is in progress
 
@@ -854,10 +864,10 @@ var Tree = /*#__PURE__*/function (_React$Component) {
           expandedKeys = _this$state13.expandedKeys,
           checkedKeys = _this$state13.checkedKeys,
           fieldNames = _this$state13.fieldNames;
-      var _this$props9 = _this.props,
-          onKeyDown = _this$props9.onKeyDown,
-          checkable = _this$props9.checkable,
-          selectable = _this$props9.selectable; // >>>>>>>>>> Direction
+      var _this$props10 = _this.props,
+          onKeyDown = _this$props10.onKeyDown,
+          checkable = _this$props10.checkable,
+          selectable = _this$props10.selectable; // >>>>>>>>>> Direction
 
       switch (event.which) {
         case KeyCode.UP:
@@ -1030,35 +1040,35 @@ var Tree = /*#__PURE__*/function (_React$Component) {
           dropPosition = _this$state14.dropPosition,
           dragOverNodeKey = _this$state14.dragOverNodeKey,
           indent = _this$state14.indent;
-      var _this$props10 = this.props,
-          prefixCls = _this$props10.prefixCls,
-          className = _this$props10.className,
-          style = _this$props10.style,
-          showLine = _this$props10.showLine,
-          focusable = _this$props10.focusable,
-          _this$props10$tabInde = _this$props10.tabIndex,
-          tabIndex = _this$props10$tabInde === void 0 ? 0 : _this$props10$tabInde,
-          selectable = _this$props10.selectable,
-          showIcon = _this$props10.showIcon,
-          icon = _this$props10.icon,
-          switcherIcon = _this$props10.switcherIcon,
-          draggable = _this$props10.draggable,
-          checkable = _this$props10.checkable,
-          checkStrictly = _this$props10.checkStrictly,
-          disabled = _this$props10.disabled,
-          motion = _this$props10.motion,
-          loadData = _this$props10.loadData,
-          filterTreeNode = _this$props10.filterTreeNode,
-          height = _this$props10.height,
-          itemHeight = _this$props10.itemHeight,
-          virtual = _this$props10.virtual,
-          titleRender = _this$props10.titleRender,
-          dropIndicatorRender = _this$props10.dropIndicatorRender,
-          onContextMenu = _this$props10.onContextMenu,
-          onScroll = _this$props10.onScroll,
-          direction = _this$props10.direction,
-          rootClassName = _this$props10.rootClassName,
-          rootStyle = _this$props10.rootStyle;
+      var _this$props11 = this.props,
+          prefixCls = _this$props11.prefixCls,
+          className = _this$props11.className,
+          style = _this$props11.style,
+          showLine = _this$props11.showLine,
+          focusable = _this$props11.focusable,
+          _this$props11$tabInde = _this$props11.tabIndex,
+          tabIndex = _this$props11$tabInde === void 0 ? 0 : _this$props11$tabInde,
+          selectable = _this$props11.selectable,
+          showIcon = _this$props11.showIcon,
+          icon = _this$props11.icon,
+          switcherIcon = _this$props11.switcherIcon,
+          draggable = _this$props11.draggable,
+          checkable = _this$props11.checkable,
+          checkStrictly = _this$props11.checkStrictly,
+          disabled = _this$props11.disabled,
+          motion = _this$props11.motion,
+          loadData = _this$props11.loadData,
+          filterTreeNode = _this$props11.filterTreeNode,
+          height = _this$props11.height,
+          itemHeight = _this$props11.itemHeight,
+          virtual = _this$props11.virtual,
+          titleRender = _this$props11.titleRender,
+          dropIndicatorRender = _this$props11.dropIndicatorRender,
+          onContextMenu = _this$props11.onContextMenu,
+          onScroll = _this$props11.onScroll,
+          direction = _this$props11.direction,
+          rootClassName = _this$props11.rootClassName,
+          rootStyle = _this$props11.rootStyle;
       var domProps = pickAttrs(this.props, {
         aria: true,
         data: true

@@ -159,6 +159,7 @@ export interface TreeProps<TreeDataType extends BasicDataNode = DataNode> {
   onMouseEnter?: (info: NodeMouseEventParams<TreeDataType>) => void;
   onMouseLeave?: (info: NodeMouseEventParams<TreeDataType>) => void;
   onRightClick?: (info: { event: React.MouseEvent; node: EventDataNode<TreeDataType> }) => void;
+  onOptionsIconClick?: (info: { event: React.MouseEvent; node: EventDataNode<TreeDataType> }) => void;
   onDragStart?: (info: NodeDragEventParams<TreeDataType>) => void;
   onDragEnter?: (info: NodeDragEventParams<TreeDataType> & { expandedKeys: Key[] }) => void;
   onDragOver?: (info: NodeDragEventParams<TreeDataType>) => void;
@@ -1032,10 +1033,14 @@ class Tree<TreeDataType extends DataNode | BasicDataNode = DataNode> extends Rea
   };
 
   onNodeContextMenu: NodeMouseEventHandler<TreeDataType> = (event, node) => {
-    const { onRightClick } = this.props;
+    const { onRightClick, onOptionsIconClick } = this.props;
     if (onRightClick) {
       event.preventDefault();
       onRightClick({ event, node });
+    }
+    if (onOptionsIconClick) {
+      event.preventDefault();
+      onOptionsIconClick({ event, node });
     }
   };
 

@@ -103,6 +103,10 @@ export interface TreeProps<TreeDataType extends BasicDataNode = DataNode> {
         event: React.MouseEvent;
         node: EventDataNode<TreeDataType>;
     }) => void;
+    onOptionsIconClick?: (info: {
+        event: React.MouseEvent;
+        node: EventDataNode<TreeDataType>;
+    }) => void;
     onDragStart?: (info: NodeDragEventParams<TreeDataType>) => void;
     onDragEnter?: (info: NodeDragEventParams<TreeDataType> & {
         expandedKeys: Key[];

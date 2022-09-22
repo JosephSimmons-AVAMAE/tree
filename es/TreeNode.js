@@ -493,7 +493,7 @@ var InternalTreeNode = /*#__PURE__*/function (_React$Component) {
         level: level,
         isStart: isStart,
         isEnd: isEnd
-      }), this.renderDragHandler(), this.renderSwitcher(), this.renderCheckbox(), this.renderSelector());
+      }), this.renderDragHandler(), this.renderSwitcher(), this.renderCheckbox(), this.renderSelector(), this.renderSelector());
     }
   }]);
 
