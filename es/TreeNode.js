@@ -362,7 +362,7 @@ var InternalTreeNode = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/React.createElement("span", {
         ref: _this.setSelectHandle,
         title: typeof title === 'string' ? title : '',
-        className: classNames("".concat(wrapClass), "".concat(wrapClass, "-").concat(_this.getNodeState() || 'normal'), !disabled && (selected || dragNodeHighlight) && "".concat(prefixCls, "-node-selected")),
+        className: classNames("".concat(wrapClass), "".concat(wrapClass, "-").concat(_this.getNodeState() || 'normal'), !disabled && (selected || dragNodeHighlight) && "".concat(prefixCls, "-node-selected"), "TEST_CLASS"),
         onMouseEnter: _this.onMouseEnter,
         onMouseLeave: _this.onMouseLeave,
         onContextMenu: _this.onContextMenu,
