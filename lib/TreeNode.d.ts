@@ -54,6 +54,7 @@ declare class InternalTreeNode extends React.Component<InternalTreeNodeProps, Tr
     onMouseEnter: (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => void;
     onMouseLeave: (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => void;
     onContextMenu: (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => void;
+    onOptionsIconClick: (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => void;
     onDragStart: (e: React.DragEvent<HTMLDivElement>) => void;
     onDragEnter: (e: React.DragEvent<HTMLDivElement>) => void;
     onDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
@@ -77,6 +78,7 @@ declare class InternalTreeNode extends React.Component<InternalTreeNodeProps, Tr
     renderIcon: () => JSX.Element;
     renderSelector: () => JSX.Element;
     renderDropIndicator: () => React.ReactNode;
+    renderOptionsIcon: () => JSX.Element;
     render(): JSX.Element;
 }
 declare const ContextTreeNode: React.FC<TreeNodeProps>;

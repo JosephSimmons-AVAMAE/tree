@@ -53,6 +53,7 @@ export interface TreeContextProps<TreeDataType extends BasicDataNode = DataNode>
     onNodeMouseEnter: NodeMouseEventHandler<TreeDataType>;
     onNodeMouseLeave: NodeMouseEventHandler<TreeDataType>;
     onNodeContextMenu: NodeMouseEventHandler<TreeDataType>;
+    onNodeOptionsIconClick: NodeMouseEventHandler<TreeDataType>;
     onNodeDragStart: NodeDragEventHandler<any, any>;
     onNodeDragEnter: NodeDragEventHandler<any, any>;
     onNodeDragOver: NodeDragEventHandler<any, any>;

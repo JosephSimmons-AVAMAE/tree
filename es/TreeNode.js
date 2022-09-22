@@ -90,6 +90,11 @@ var InternalTreeNode = /*#__PURE__*/function (_React$Component) {
       onNodeContextMenu(e, convertNodePropsToEventData(_this.props));
     };
 
+    _this.onOptionsIconClick = function (e) {
+      var onNodeOptionsIconClick = _this.props.context.onNodeOptionsIconClick;
+      onNodeOptionsIconClick(e, convertNodePropsToEventData(_this.props));
+    };
+
     _this.onDragStart = function (e) {
       var onNodeDragStart = _this.props.context.onNodeDragStart;
       e.stopPropagation();
@@ -396,6 +401,15 @@ var InternalTreeNode = /*#__PURE__*/function (_React$Component) {
       }) : null;
     };
 
+    _this.renderOptionsIcon = function () {
+      var loading = _this.props.loading;
+      var prefixCls = _this.props.context.prefixCls;
+      return /*#__PURE__*/React.createElement("span", {
+        className: classNames("".concat(prefixCls, "-iconOptions"), loading && "".concat(prefixCls, "-icon_loading")),
+        onClick: _this.onOptionsIconClick
+      });
+    };
+
     return _this;
   }
 
@@ -488,12 +502,18 @@ var InternalTreeNode = /*#__PURE__*/function (_React$Component) {
         onDrop: mergedDraggable ? this.onDrop : undefined,
         onDragEnd: mergedDraggable ? this.onDragEnd : undefined,
         onMouseMove: onMouseMove
-      }, ariaSelected, dataOrAriaAttributeProps), /*#__PURE__*/React.createElement(Indent, {
+      }, ariaSelected, dataOrAriaAttributeProps), /*#__PURE__*/React.createElement("div", {
+        className: "".concat(prefixCls, "-treenode-row-contents")
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "".concat(prefixCls, "-treenode-row-contents-left")
+      }, /*#__PURE__*/React.createElement(Indent, {
         prefixCls: prefixCls,
         level: level,
         isStart: isStart,
         isEnd: isEnd
-      }), this.renderDragHandler(), this.renderSwitcher(), this.renderCheckbox(), this.renderSelector());
+      }), this.renderDragHandler(), this.renderSwitcher(), this.renderCheckbox(), this.renderSelector()), /*#__PURE__*/React.createElement("div", {
+        className: "".concat(prefixCls, "-treenode-row-contents-right")
+      }, this.renderOptionsIcon())));
     }
   }]);
 

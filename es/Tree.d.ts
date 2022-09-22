@@ -221,6 +221,7 @@ declare class Tree<TreeDataType extends DataNode | BasicDataNode = DataNode> ext
     onNodeMouseEnter: NodeMouseEventHandler<TreeDataType>;
     onNodeMouseLeave: NodeMouseEventHandler<TreeDataType>;
     onNodeContextMenu: NodeMouseEventHandler<TreeDataType>;
+    onNodeOptionsIconClick: NodeMouseEventHandler<TreeDataType>;
     onFocus: React.FocusEventHandler<HTMLDivElement>;
     onBlur: React.FocusEventHandler<HTMLDivElement>;
     getTreeNodeRequiredProps: () => {
