@@ -5,8 +5,8 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Tree from '../index';
-import "rc-tree/assets/index.css";
-import "./assets/StorybookTree.css";
+import "../../assets/index.css";
+import "./tree.css";
 
 //👇 This default export determines where your story goes in the story list
 export default {
@@ -25,7 +25,7 @@ export const FirstStory = Template.bind({});
 
 FirstStory.args = {
   /*👇 The args you need here will depend on your component */
-  treeData: [{"key":"0-0","title":"Configuration","icon":"f","children":[{"key":"0-0-0","title":"SQ_OMS","icon":"c","isLeaf":true},{"key":"0-0-1","title":"SQ_OPTIMIZATION","icon":"c","isLeaf":true},{"key":"0-0-2","title":"SQ_OPTIMIZER","icon":"c","isLeaf":true},{"key":"0-0-3","title":"SQ_ORDER_MANAGEMENT","icon":"c","isLeaf":true},{"key":"0-0-4","title":"SQ_UI_MASTER_COLUMNS","icon":"c","isLeaf":true},{"key":"0-0-5","title":"SQ_UI_MASTER_NAME","icon":"c","isLeaf":true},{"key":"0-0-6","title":"SQ_UI_MASTER_PRICE","icon":"c","isLeaf":true},{"key":"0-0-7","title":"SQ_UI_MASTER_TOLTIP","icon":"c","isLeaf":true}]}],
+  treeData: [{"key":"0-0","title":"Configuration","icon":"f","children":[{"key":"0-0-0","title":"SQ_OMSsssssssss","icon":"c","children":[{"key":"0-0-0-0","title":"SQ_OMSssss","icon":"c","children":[{"key":"0-0-0-0-0","title":"SQ_OMSsssssss","icon":"c","children":[{"key":"0-0-0-0-0-0","title":"SQ_OMSsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss","icon":"c","isLeaf":true}]}]}]},{"key":"0-0-1","title":"SQ_OPTIMIZATION","icon":"c","isLeaf":true},{"key":"0-0-2","title":"SQ_OPTIMIZER","icon":"c","isLeaf":true},{"key":"0-0-3","title":"SQ_ORDER_MANAGEMENT","icon":"c","isLeaf":true},{"key":"0-0-4","title":"SQ_UI_MASTER_COLUMNS","icon":"c","isLeaf":true},{"key":"0-0-5","title":"SQ_UI_MASTER_NAME","icon":"c","isLeaf":true},{"key":"0-0-6","title":"SQ_UI_MASTER_PRICE","icon":"c","isLeaf":true},{"key":"0-0-7","title":"SQ_UI_MASTER_TOLTIP","icon":"c","isLeaf":true}]}],
   prefixCls: 'rc-tree',
   showLine: true,
   showIcon: true,

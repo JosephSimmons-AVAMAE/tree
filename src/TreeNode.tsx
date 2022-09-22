@@ -141,6 +141,13 @@ class InternalTreeNode extends React.Component<InternalTreeNodeProps, TreeNodeSt
     onNodeContextMenu(e, convertNodePropsToEventData(this.props));
   };
 
+  onOptionsIconClick = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
+    const {
+      context: { onNodeOptionsIconClick },
+    } = this.props;
+    onNodeOptionsIconClick(e, convertNodePropsToEventData(this.props));
+  };
+
   onDragStart = (e: React.DragEvent<HTMLDivElement>) => {
     const {
       context: { onNodeDragStart },
@@ -520,6 +527,24 @@ class InternalTreeNode extends React.Component<InternalTreeNodeProps, TreeNodeSt
       : null;
   };
 
+  // Options icon
+  renderOptionsIcon = () => {
+    const { loading } = this.props;
+    const {
+      context: { prefixCls },
+    } = this.props;
+
+    return (
+      <span
+        className={classNames(
+          `${prefixCls}-iconOptions`,
+          loading && `${prefixCls}-icon_loading`,
+        )}
+        onClick={this.onOptionsIconClick}
+      />
+    );
+  };
+
   // =========================== Render ===========================
   render() {
     const {
@@ -602,11 +627,18 @@ class InternalTreeNode extends React.Component<InternalTreeNodeProps, TreeNodeSt
         {...ariaSelected}
         {...dataOrAriaAttributeProps}
       >
-        <Indent prefixCls={prefixCls} level={level} isStart={isStart} isEnd={isEnd} />
-        {this.renderDragHandler()}
-        {this.renderSwitcher()}
-        {this.renderCheckbox()}
-        {this.renderSelector()}
+        <div className={`${prefixCls}-treenode-row-contents`}>
+          <div className={`${prefixCls}-treenode-row-contents-left`}>
+            <Indent prefixCls={prefixCls} level={level} isStart={isStart} isEnd={isEnd} />
+            {this.renderDragHandler()}
+            {this.renderSwitcher()}
+            {this.renderCheckbox()}
+            {this.renderSelector()}
+          </div>
+          <div className={`${prefixCls}-treenode-row-contents-right`}>
+            {this.renderOptionsIcon()}
+          </div>
+        </div>
       </div>
     );
   }

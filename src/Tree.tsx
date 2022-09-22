@@ -1033,11 +1033,15 @@ class Tree<TreeDataType extends DataNode | BasicDataNode = DataNode> extends Rea
   };
 
   onNodeContextMenu: NodeMouseEventHandler<TreeDataType> = (event, node) => {
-    const { onRightClick, onOptionsIconClick } = this.props;
+    const { onRightClick } = this.props;
     if (onRightClick) {
       event.preventDefault();
       onRightClick({ event, node });
     }
+  };
+
+  onNodeOptionsIconClick: NodeMouseEventHandler<TreeDataType> = (event, node) => {
+    const { onOptionsIconClick } = this.props;
     if (onOptionsIconClick) {
       event.preventDefault();
       onOptionsIconClick({ event, node });
@@ -1441,6 +1445,7 @@ class Tree<TreeDataType extends DataNode | BasicDataNode = DataNode> extends Rea
           onNodeMouseEnter: this.onNodeMouseEnter,
           onNodeMouseLeave: this.onNodeMouseLeave,
           onNodeContextMenu: this.onNodeContextMenu,
+          onNodeOptionsIconClick: this.onNodeOptionsIconClick,
           onNodeDragStart: this.onNodeDragStart,
           onNodeDragEnter: this.onNodeDragEnter,
           onNodeDragOver: this.onNodeDragOver,
@@ -1450,7 +1455,7 @@ class Tree<TreeDataType extends DataNode | BasicDataNode = DataNode> extends Rea
         }}
       >
         <div
-          role="tree test"
+          role="tree"
           className={classNames(prefixCls, className, rootClassName, {
             [`${prefixCls}-show-line`]: showLine,
             [`${prefixCls}-focused`]: focused,
