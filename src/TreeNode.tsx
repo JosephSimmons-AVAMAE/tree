@@ -607,7 +607,7 @@ class InternalTreeNode extends React.Component<InternalTreeNodeProps, TreeNodeSt
         {this.renderSwitcher()}
         {this.renderCheckbox()}
         {this.renderSelector()}
-        {this.renderSelector()}
+        <span>Hi</span>
       </div>
     );
   }
