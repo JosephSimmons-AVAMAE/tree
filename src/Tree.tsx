@@ -1450,7 +1450,7 @@ class Tree<TreeDataType extends DataNode | BasicDataNode = DataNode> extends Rea
         }}
       >
         <div
-          role="tree"
+          role="tree test"
           className={classNames(prefixCls, className, rootClassName, {
             [`${prefixCls}-show-line`]: showLine,
             [`${prefixCls}-focused`]: focused,

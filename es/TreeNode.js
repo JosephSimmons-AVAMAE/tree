@@ -362,7 +362,7 @@ var InternalTreeNode = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/React.createElement("span", {
         ref: _this.setSelectHandle,
         title: typeof title === 'string' ? title : '',
-        className: classNames("".concat(wrapClass), "".concat(wrapClass, "-").concat(_this.getNodeState() || 'normal'), !disabled && (selected || dragNodeHighlight) && "".concat(prefixCls, "-node-selected"), "TEST_CLASS"),
+        className: classNames("".concat(wrapClass), "".concat(wrapClass, "-").concat(_this.getNodeState() || 'normal'), !disabled && (selected || dragNodeHighlight) && "".concat(prefixCls, "-node-selected")),
         onMouseEnter: _this.onMouseEnter,
         onMouseLeave: _this.onMouseLeave,
         onContextMenu: _this.onContextMenu,
@@ -493,7 +493,7 @@ var InternalTreeNode = /*#__PURE__*/function (_React$Component) {
         level: level,
         isStart: isStart,
         isEnd: isEnd
-      }), this.renderDragHandler(), this.renderSwitcher(), this.renderCheckbox(), this.renderSelector(), /*#__PURE__*/React.createElement("span", null, "Hi"));
+      }), this.renderDragHandler(), this.renderSwitcher(), this.renderCheckbox(), this.renderSelector());
     }
   }]);
 

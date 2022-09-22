@@ -483,7 +483,6 @@ class InternalTreeNode extends React.Component<InternalTreeNodeProps, TreeNodeSt
           `${wrapClass}`,
           `${wrapClass}-${this.getNodeState() || 'normal'}`,
           !disabled && (selected || dragNodeHighlight) && `${prefixCls}-node-selected`,
-          "TEST_CLASS"
         )}
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
@@ -608,7 +607,6 @@ class InternalTreeNode extends React.Component<InternalTreeNodeProps, TreeNodeSt
         {this.renderSwitcher()}
         {this.renderCheckbox()}
         {this.renderSelector()}
-        <span>Hi</span>
       </div>
     );
   }

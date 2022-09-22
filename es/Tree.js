@@ -1129,7 +1129,7 @@ var Tree = /*#__PURE__*/function (_React$Component) {
           onNodeDrop: this.onNodeDrop
         }
       }, /*#__PURE__*/React.createElement("div", {
-        role: "tree",
+        role: "tree test",
         className: classNames(prefixCls, className, rootClassName, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-show-line"), showLine), _defineProperty(_classNames, "".concat(prefixCls, "-focused"), focused), _defineProperty(_classNames, "".concat(prefixCls, "-active-focused"), activeKey !== null), _classNames)),
         style: rootStyle
       }, /*#__PURE__*/React.createElement(NodeList, _extends({
