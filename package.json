@@ -43,7 +43,9 @@
     "test": "father test",
     "coverage": "father test --coverage",
     "gh-pages": "npm run docs:build && father doc deploy",
-    "now-build": "npm run docs:build"
+    "now-build": "npm run docs:build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "precommit": [
     "compile"
@@ -53,6 +55,15 @@
     "react-dom": "*"
   },
   "devDependencies": {
+    "@babel/core": "^7.19.1",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "0.0.13",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.0",
     "@types/enzyme": "^3.10.9",
@@ -61,11 +72,13 @@
     "@types/react-dom": "^17.0.8",
     "@types/warning": "^3.0.0",
     "@umijs/fabric": "^3.0.0",
+    "babel-loader": "^8.2.5",
     "dumi": "^1.1.4",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.0.0",
     "eslint": "^7.0.0",
+    "eslint-plugin-storybook": "^0.6.4",
     "father": "^2.29.8",
     "glob": "^7.1.6",
     "less": "^3.11.1",
