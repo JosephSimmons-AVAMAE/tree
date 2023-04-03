@@ -61,7 +61,7 @@ export interface TreeProps<TreeDataType extends BasicDataNode = DataNode> {
     selectedKeys?: Key[];
     allowDrop?: AllowDrop<TreeDataType>;
     titleRender?: (node: TreeDataType) => React.ReactNode;
-    returnOptionsIconNode?: (classNames: string, onClick: (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => void) => JSX.Element;
+    returnOptionsIconNode?: (classNames: string, onClick: (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => void, treeNode: EventDataNode<DataNode>) => JSX.Element;
     dropIndicatorRender?: (props: {
         dropPosition: -1 | 0 | 1;
         dropLevelOffset: number;
