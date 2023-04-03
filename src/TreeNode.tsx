@@ -531,18 +531,15 @@ class InternalTreeNode extends React.Component<InternalTreeNodeProps, TreeNodeSt
   renderOptionsIcon = () => {
     const { loading } = this.props;
     const {
-      context: { prefixCls },
+      context: { prefixCls, returnOptionsIconNode },
     } = this.props;
 
-    return (
-      <span
-        className={classNames(
-          `${prefixCls}-iconOptions`,
-          loading && `${prefixCls}-icon_loading`,
-        )}
-        onClick={this.onOptionsIconClick}
-      />
+    const optionsIconClassNames = classNames(
+      `${prefixCls}-iconOptions`,
+      loading && `${prefixCls}-icon_loading`,
     );
+
+    return returnOptionsIconNode(optionsIconClassNames, this.onOptionsIconClick)
   };
 
   // =========================== Render ===========================

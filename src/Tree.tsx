@@ -111,6 +111,10 @@ export interface TreeProps<TreeDataType extends BasicDataNode = DataNode> {
   selectedKeys?: Key[];
   allowDrop?: AllowDrop<TreeDataType>;
   titleRender?: (node: TreeDataType) => React.ReactNode;
+  returnOptionsIconNode?: (
+    classNames: string,
+    onClick: (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => void
+  ) => JSX.Element;
   dropIndicatorRender?: (props: {
     dropPosition: -1 | 0 | 1;
     dropLevelOffset: number;
@@ -1382,6 +1386,7 @@ class Tree<TreeDataType extends DataNode | BasicDataNode = DataNode> extends Rea
       itemHeight,
       virtual,
       titleRender,
+      returnOptionsIconNode,
       dropIndicatorRender,
       onContextMenu,
       onScroll,
@@ -1435,6 +1440,7 @@ class Tree<TreeDataType extends DataNode | BasicDataNode = DataNode> extends Rea
           filterTreeNode,
 
           titleRender,
+          returnOptionsIconNode,
 
           onNodeClick: this.onNodeClick,
           onNodeDoubleClick: this.onNodeDoubleClick,

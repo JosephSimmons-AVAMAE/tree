@@ -70,6 +70,10 @@ export interface TreeContextProps<TreeDataType extends BasicDataNode = DataNode>
   loadData: (treeNode: EventDataNode<TreeDataType>) => Promise<void>;
   filterTreeNode: (treeNode: EventDataNode<TreeDataType>) => boolean;
   titleRender?: (node: any) => React.ReactNode;
+  returnOptionsIconNode?: (
+    classNames: string,
+    onClick: (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => void
+  ) => JSX.Element;
 
   onNodeClick: NodeMouseEventHandler<TreeDataType>;
   onNodeDoubleClick: NodeMouseEventHandler<TreeDataType>;

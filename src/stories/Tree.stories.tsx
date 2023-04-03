@@ -44,4 +44,6 @@ FirstStory.args = {
   dropIndicatorRender: [],
   allowDrop: () => true,
   expandAction: "click",
+  onOptionsIconClick: () => window.alert("Testing options icon click."),
+  returnOptionsIconNode: (classNames, onClick) => <span className={classNames} onClick={onClick} />
 };
