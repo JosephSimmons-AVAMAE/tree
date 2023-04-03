@@ -403,11 +403,11 @@ var InternalTreeNode = /*#__PURE__*/function (_React$Component) {
 
     _this.renderOptionsIcon = function () {
       var loading = _this.props.loading;
-      var prefixCls = _this.props.context.prefixCls;
-      return /*#__PURE__*/React.createElement("span", {
-        className: classNames("".concat(prefixCls, "-iconOptions"), loading && "".concat(prefixCls, "-icon_loading")),
-        onClick: _this.onOptionsIconClick
-      });
+      var _this$props$context5 = _this.props.context,
+          prefixCls = _this$props$context5.prefixCls,
+          returnOptionsIconNode = _this$props$context5.returnOptionsIconNode;
+      var optionsIconClassNames = classNames("".concat(prefixCls, "-iconOptions"), loading && "".concat(prefixCls, "-icon_loading"));
+      return returnOptionsIconNode(optionsIconClassNames, _this.onOptionsIconClick);
     };
 
     return _this;
@@ -464,13 +464,13 @@ var InternalTreeNode = /*#__PURE__*/function (_React$Component) {
           selectable = _this$props8.selectable,
           otherProps = _objectWithoutProperties(_this$props8, _excluded);
 
-      var _this$props$context5 = this.props.context,
-          prefixCls = _this$props$context5.prefixCls,
-          filterTreeNode = _this$props$context5.filterTreeNode,
-          keyEntities = _this$props$context5.keyEntities,
-          dropContainerKey = _this$props$context5.dropContainerKey,
-          dropTargetKey = _this$props$context5.dropTargetKey,
-          draggingNodeKey = _this$props$context5.draggingNodeKey;
+      var _this$props$context6 = this.props.context,
+          prefixCls = _this$props$context6.prefixCls,
+          filterTreeNode = _this$props$context6.filterTreeNode,
+          keyEntities = _this$props$context6.keyEntities,
+          dropContainerKey = _this$props$context6.dropContainerKey,
+          dropTargetKey = _this$props$context6.dropTargetKey,
+          draggingNodeKey = _this$props$context6.draggingNodeKey;
       var disabled = this.isDisabled();
       var dataOrAriaAttributeProps = pickAttrs(otherProps, {
         aria: true,
