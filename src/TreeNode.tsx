@@ -539,7 +539,7 @@ class InternalTreeNode extends React.Component<InternalTreeNodeProps, TreeNodeSt
       loading && `${prefixCls}-icon_loading`,
     );
 
-    return returnOptionsIconNode(optionsIconClassNames, this.onOptionsIconClick)
+    return returnOptionsIconNode(optionsIconClassNames, this.onOptionsIconClick, convertNodePropsToEventData(this.props))
   };
 
   // =========================== Render ===========================
