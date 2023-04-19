@@ -407,7 +407,7 @@ var InternalTreeNode = /*#__PURE__*/function (_React$Component) {
           prefixCls = _this$props$context5.prefixCls,
           returnOptionsIconNode = _this$props$context5.returnOptionsIconNode;
       var optionsIconClassNames = classNames("".concat(prefixCls, "-iconOptions"), loading && "".concat(prefixCls, "-icon_loading"));
-      return returnOptionsIconNode(optionsIconClassNames, _this.onOptionsIconClick, convertNodePropsToEventData(_this.props));
+      return returnOptionsIconNode ? returnOptionsIconNode(optionsIconClassNames, _this.onOptionsIconClick, convertNodePropsToEventData(_this.props)) : null;
     };
 
     return _this;
